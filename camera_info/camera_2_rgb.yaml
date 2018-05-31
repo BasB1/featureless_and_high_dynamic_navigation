@@ -1,0 +1,20 @@
+image_width: 640
+image_height: 480
+camera_name: camera_2_rgb.yaml
+camera_matrix:
+  rows: 3
+  cols: 3
+  data: [583.049754, 0.000000, 325.640919, 0.000000, 585.817529, 257.100603, 0.000000, 0.000000, 1.000000]
+distortion_model: plumb_bob
+distortion_coefficients:
+  rows: 1
+  cols: 5
+  data: [0.117815, -0.179907, -0.001879, -0.000180, 0.000000]
+rectification_matrix:
+  rows: 3
+  cols: 3
+  data: [1, 0, 0, 0, 1, 0, 0, 0, 1]
+projection_matrix:
+  rows: 3
+  cols: 4
+  data: [594.769836, 0.000000, 325.561019, 0.000000, 0.000000, 597.329773, 256.392004, 0.000000, 0.000000, 0.000000, 1.000000, 0.000000]

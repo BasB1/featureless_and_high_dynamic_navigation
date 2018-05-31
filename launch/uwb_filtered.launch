@@ -1,0 +1,59 @@
+<?xml version="1.0" encoding="UTF-8"?> 
+<launch>
+
+  <arg name="anchor_0_id" default="0x6e3f" />
+  <arg name="anchor_0_x" default="0" />
+  <arg name="anchor_0_y" default="0" />
+  <arg name="anchor_0_z" default="2300" />
+
+  <arg name="anchor_1_id" default="0x6e2b" />
+  <arg name="anchor_1_x" default="5920" />
+  <arg name="anchor_1_y" default="0" />
+  <arg name="anchor_1_z" default="2300" />
+
+  <arg name="anchor_2_id" default="0x6e28" />
+  <arg name="anchor_2_x" default="7180" />
+  <arg name="anchor_2_y" default="7980" />
+  <arg name="anchor_2_z" default="2300" />
+
+  <arg name="anchor_3_id" default="0x6e2f" />
+  <arg name="anchor_3_x" default="0520" />
+  <arg name="anchor_3_y" default="7980" />
+  <arg name="anchor_3_z" default="2300" />
+
+  <node name="pozyx_node_trilateration" pkg="pozyx_drivers" type="uwb.py" output="screen">
+    <param name="frequency" value="20" />
+
+    <param name="anchor0_id" value="$(arg anchor_0_id)" />
+    <param name="anchor1_id" value="$(arg anchor_1_id)" />
+    <param name="anchor2_id" value="$(arg anchor_2_id)" />
+    <param name="anchor3_id" value="$(arg anchor_3_id)" />
+
+    <param name="anchor0_coordinates" value="$(arg anchor_0_x), $(arg anchor_0_y), $(arg anchor_0_z)" />
+    <param name="anchor1_coordinates" value="$(arg anchor_1_x), $(arg anchor_1_y), $(arg anchor_1_z)" />
+    <param name="anchor2_coordinates" value="$(arg anchor_2_x), $(arg anchor_2_y), $(arg anchor_2_z)" />
+    <param name="anchor3_coordinates" value="$(arg anchor_3_x), $(arg anchor_3_y), $(arg anchor_3_z)" />
+  </node>
+
+  <arg name="anchor_0_link_x" default="$(eval arg('anchor_0_x') / 1000)" />
+  <arg name="anchor_0_link_y" default="$(eval arg('anchor_0_y') / 1000)" />
+  <arg name="anchor_0_link_z" default="$(eval arg('anchor_0_z') / 1000)" />
+
+  <arg name="anchor_1_link_x" default="$(eval arg('anchor_1_x') / 1000)" />
+  <arg name="anchor_1_link_y" default="$(eval arg('anchor_1_y') / 1000)" />
+  <arg name="anchor_1_link_z" default="$(eval arg('anchor_1_z') / 1000)" />
+
+  <arg name="anchor_2_link_x" default="$(eval arg('anchor_2_x') / 1000)" />
+  <arg name="anchor_2_link_y" default="$(eval arg('anchor_2_y') / 1000)" />
+  <arg name="anchor_2_link_z" default="$(eval arg('anchor_2_z') / 1000)" />
+
+  <arg name="anchor_3_link_x" default="$(eval arg('anchor_3_x') / 1000)" />
+  <arg name="anchor_3_link_y" default="$(eval arg('anchor_3_y') / 1000)" />
+  <arg name="anchor_3_link_z" default="$(eval arg('anchor_3_z') / 1000)" />
+
+  <node name="anchor_0_link" pkg="tf" type="static_transform_publisher" args="$(arg anchor_0_link_x) $(arg anchor_0_link_y) $(arg anchor_0_link_z) 0 0 0 world anchor_0_link 10"/>
+  <node name="anchor_1_link" pkg="tf" type="static_transform_publisher" args="$(arg anchor_1_link_x) $(arg anchor_1_link_y) $(arg anchor_1_link_z) 0 0 0 world anchor_1_link 10"/>
+  <node name="anchor_2_link" pkg="tf" type="static_transform_publisher" args="$(arg anchor_2_link_x) $(arg anchor_2_link_y) $(arg anchor_2_link_z) 0 0 0 world anchor_2_link 10"/>
+  <node name="anchor_3_link" pkg="tf" type="static_transform_publisher" args="$(arg anchor_3_link_x) $(arg anchor_3_link_y) $(arg anchor_3_link_z) 0 0 0 world anchor_3_link 10"/>
+
+</launch>
