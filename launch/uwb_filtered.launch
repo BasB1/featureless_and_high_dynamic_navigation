@@ -21,7 +21,7 @@
   <arg name="anchor_3_y" default="7980" />
   <arg name="anchor_3_z" default="2300" />
 
-  <node name="pozyx_node_trilateration" pkg="pozyx_drivers" type="uwb.py" output="screen">
+  <node name="pozyx_node_trilateration" pkg="featureless_and_high_dynamic_navigation" type="uwb.py" output="screen">
     <param name="frequency" value="20" />
 
     <param name="anchor0_id" value="$(arg anchor_0_id)" />
