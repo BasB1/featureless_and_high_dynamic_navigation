@@ -5,10 +5,10 @@ This package provides localization by using different odometry sources, combined
 For the purpose of research, the "ekf_localization_node" is applied from the "robot_localization"
 
 - robot_localization
-'''shell
+```shell
 $ cd your_workspace/src
-'''
-'''shell
+```
+```shell
 $ git clone https://github.com/cra-ros-pkg/robot_localization
-'''
+```
 
