@@ -25,6 +25,7 @@ $ pip install pypozyx
 - TinkerForge Brick 2.0
 
 For daemon instructions: https://www.tinkerforge.com/en/doc/Software/Brickd_Install_Linux.html#brickd-install-linux
+
 Python library:
 ```shell
 $ pip install tinkerforge
