@@ -38,3 +38,10 @@ More info here: https://github.com/introlab/rtabmap_ros
 ```shell
 $ sudo apt-get install ros-kinetic-rtabmap-ros
 ```
+
+
+## Trilateration
+This package contains a node that does the filtered trilateration with the Pozyx system. Using this trilateration method it is possible to improve accuracy with 60% in combination with an EKF and IMU. More is elaborated in the research paper that is available under the folder 'paper'.
+
+### Kalman Filter
+The distance measurements are performed with an one dimensional KF to filter out the oresent gaussian noise. Normally, the distance measurements are feeded directly to an EKF model for filtered localization. By taking the filtering one step higher before feeding the information to the EKF, a better result can be achieved. 
